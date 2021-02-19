@@ -18,5 +18,5 @@ class BpRegex:
 class MpRegex: 
   prefix = (R(u'^m\.?p\.?$', re.I) | I(u'melting') + I(u'point')).hide()#u-createsunicodestring
   units = Optional(R(u'^[CFK]\.?$'))(u'units').add_action(merge)
-  value = R(u'^\d+(\.\d+)?$')(u'value')()
+  value = R(u'^\d+(\.\d+)?$')(u'value')
   mp = (prefix + Obstructions.all + value + units)(u'mp')
